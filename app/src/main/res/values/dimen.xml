@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home Fragment -->
+    <dimen name="home_trending_item_card_view_elevation">0dp</dimen>
+    <dimen name="home_meme_item_card_view_margin">2dp</dimen>
+
+</resources>
