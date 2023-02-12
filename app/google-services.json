@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "468979264222",
+    "project_id": "ai-brush-mobile",
+    "storage_bucket": "ai-brush-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468979264222:android:606a17430a1ea29721304f",
+        "android_client_info": {
+          "package_name": "com.vdevteam.ai_brush_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468979264222-lvohukvnsdmb53rrvbjjoev6pcb3i6dn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vdevteam.ai_brush_android",
+            "certificate_hash": "69b0657fa478e28688fe8c35a64269c2c36ee4e9"
+          }
+        },
+        {
+          "client_id": "468979264222-8d3n35fq4lr5tpqfe9jf3o88sr79331l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAgXVVsIkekdib7X7QvIBHSlkbmTvb5zI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468979264222-8d3n35fq4lr5tpqfe9jf3o88sr79331l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

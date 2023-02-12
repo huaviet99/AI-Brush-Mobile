@@ -1,0 +1,47 @@
+name: AI-Brush-CD
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  generate-and-upload-build-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup JDK 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: "11"
+
+      - name: Bump Version Code
+        uses: chkfung/android-version-actions@v1.2.1
+        with:
+          gradlePath: app/build.gradle
+          versionCode: ${{github.run_number}}
+
+      - name: Print Version Information
+        run: echo "VERSION_INFORMATION=$(./gradlew -q printVersionInformation)" >> $GITHUB_ENV
+
+      - name: Build Debug APK File
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Set Verion Information To APK File
+        run: mv app/build/outputs/apk/debug/app-debug.apk "app/build/outputs/apk/debug/ai-brush-debug-${{env.VERSION_INFORMATION}}.apk"
+
+      - name: Upload Artifact To Github
+        uses: actions/upload-artifact@v1
+        with:
+          name: app
+          path: app/build/outputs/apk/debug/ai-brush-debug-${{env.VERSION_INFORMATION}}.apk
+
+      - name: Upload Artifact To Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          token: ${{secrets.FIREBASE_CLI_TOKEN}}
+          groups: VDevTeam
+          file: app/build/outputs/apk/debug/ai-brush-debug-${{env.VERSION_INFORMATION}}.apk

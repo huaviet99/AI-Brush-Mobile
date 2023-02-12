@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">AI-Brush-Android</string>
+    <string name="app_name">AI Brush</string>
+    <string name="none"></string>
+
+    <!--  HOME FRAGMENT  -->
+    <string name="enter_your_prompt_section">Enter Your Prompt</string>
+    <string name="need_inspiration_button">Need Inspiration ?</string>
+    <string name="inspiration_section">Inspiration</string>
+    <string name="see_world_button">See World</string>
+    <string name="select_style_section">Select Style</string>
+    <string name="see_all_button">See All</string>
+
 </resources>
